@@ -1,0 +1,11 @@
+{
+  "name": "tnesland.me",
+  "version": "2.0.0",
+  "description": "Personal website of Travis Nesland",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Travis Nesland",
+  "license": "ISC"
+}
