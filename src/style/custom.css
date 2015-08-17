@@ -1,0 +1,12 @@
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+  background-color: red
+}
+a {
+  color: #05415B;
+  opacity: 0.85
+}
+a:focus, a:hover {
+  color: #05415B
+}

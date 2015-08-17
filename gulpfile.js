@@ -14,13 +14,14 @@ var config = {
     devBaseUrl: 'http://localhost',
     paths: {
         html: './src/*.html',
-        js: './src/**/*.js',
+        js: './src/**/*.jsx',
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
-            'node_modules/bootstrap/dist/css/boostrap-theme.min.css'
+            'node_modules/bootstrap/dist/css/boostrap-theme.min.css',
+            './src/style/*.css'
         ],
         dist: './dist',
-        mainJs: './src/main.js'
+        mainJs: './src/main.jsx'
     }
 };
 
@@ -36,8 +37,11 @@ gulp.task('connect', function() {
 
 // open up index in web browser
 gulp.task('open', ['connect'], function() {
-    gulp.src('dist/index.html')
-        .pipe(open('', { url: config.devBaseUrl + ':' + config.port + '/'}));
+    var options = {
+        uri: config.devBaseUrl + ":" + config.port + "/"
+    };
+    gulp.src('./dist/index.html')
+        .pipe(open(options));
 });
 
 // copy over html to dist
@@ -60,7 +64,8 @@ gulp.task('js', function() {
 gulp.task('css', function() {
     gulp.src(config.paths.css)
         .pipe(concat('bundle.css'))
-        .pipe(gulp.dest(config.paths.dist + '/css'));
+        .pipe(gulp.dest(config.paths.dist + '/css'))
+        .pipe(connect.reload());
 });
 
 gulp.task('lint', function() {
@@ -73,6 +78,7 @@ gulp.task('lint', function() {
 gulp.task('watch', function() {
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js', 'lint']);
+    gulp.watch('./src/style/*.css', ['css']);
 });
 
 // default task for convenience

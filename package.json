@@ -20,7 +20,9 @@
     "gulp-open": "^1.0.0",
     "jquery": "^2.1.4",
     "react": "^0.13.3",
+    "react-image-component": "^1.0.0",
     "react-router": "^0.13.3",
+    "react-style": "^0.5.5",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
   }
