@@ -6,7 +6,8 @@ var Badge = require('./badge.jsx');
 
 var styles = StyleSheet.create({
     headerBox: {
-        marginTop: "60px"
+      marginTop: "60px",
+      marginBottom: "60px"
     },
     badgeBox: {
         float: "left",
