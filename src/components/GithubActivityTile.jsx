@@ -39,13 +39,11 @@ var GitHubActivityTile = React.createClass({
     var thisTile = this;
     axios.get(endpoint)
       .then(function(response) {
-        console.log(response.data);
         setTimeout(function() {
           thisTile.setState({quantity: thisTile.state.quantity + 1, fetching: false});
         }, 800);
       })
       .catch(function(response) {
-        console.log(response);
         thisTile.setState({fetching: false});
       });
   },

@@ -38,9 +38,6 @@ var CodeEvalActivityTile = React.createClass({
     var thisTile = this;
     var filteredData = _.filter(CodeEvalData.contestSubmissions, function(cs) {
       var subDate = new Date(cs.date);
-      console.log("subDate:" + subDate);
-      console.log("range(0):" + range[0]);
-      console.log("range(1):" + range[1]);
       return subDate >= range[0] && subDate <= range[1];
     });
     this.setState({quantity: filteredData.length});
