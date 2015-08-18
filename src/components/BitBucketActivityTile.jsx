@@ -12,7 +12,7 @@ var BitBucketActivityTile = React.createClass({
       quantity: 0
     };
   },
-  
+
   getDefaultProps: function() {
     return {
       href: "https://bitbucket.org/tnez",

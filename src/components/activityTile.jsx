@@ -57,7 +57,7 @@ var ActivityTile = React.createClass({
       this.state.quantity = Math.floor(Math.random() * 100);
     }
   },
-  
+
   render: function() {
     return (
       <div className="col-sm-4 col-xs-6">

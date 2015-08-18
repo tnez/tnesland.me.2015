@@ -36,7 +36,7 @@ var ActivityTileList = React.createClass({
       range: [new Date(2007,0,1), new Date()]
     };
   },
-  
+
   updateRange: function() {
     this.setState({range: [Date(2000,1,1), Date()]});
   },

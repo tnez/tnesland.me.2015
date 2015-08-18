@@ -13,7 +13,7 @@ var CodeEvalActivityTile = React.createClass({
       quantity: 0
     };
   },
-  
+
   getDefaultProps: function() {
     return {
       href: "https://codeeval.com/profile/tnez",

@@ -12,7 +12,7 @@ var GitHubActivityTile = React.createClass({
       quantity: 0
     };
   },
-  
+
   getDefaultProps: function() {
     return {
       href: "https://github.com/tnez",

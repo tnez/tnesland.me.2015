@@ -13,7 +13,7 @@ var HackerRankActivityTile = React.createClass({
       quantity: 0
     };
   },
-  
+
   getDefaultProps: function() {
     return {
       href: "https://hackerrank.com/tnesland",
