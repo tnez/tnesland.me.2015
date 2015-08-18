@@ -3,6 +3,7 @@
 var React = require('react');
 var StyleSheet = require('react-style');
 var Header = require('./header.jsx');
+var Blurb = require('./Blurb.jsx')
 var ActivityTileList = require('./activityTileList.jsx');
 
 var Home = React.createClass({
@@ -10,7 +11,7 @@ var Home = React.createClass({
     return (
       <div>
         <Header />
-        <hr />
+        <Blurb />
         <ActivityTileList />
       </div>
     );
