@@ -18,8 +18,10 @@ var config = {
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/boostrap-theme.min.css',
+            'node_modules/font-awesome/css/font-awesome.min.css',
             './src/style/*.css'
         ],
+        fonts: 'node_modules/font-awesome/fonts/fontawesome-webfont.*',
         dist: './dist',
         mainJs: './src/main.jsx'
     }
@@ -68,6 +70,12 @@ gulp.task('css', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('fonts', function() {
+    gulp.src(config.paths.fonts)
+        .pipe(gulp.dest(config.paths.dist + '/fonts'))
+        .pipe(connect.reload());
+});
+
 gulp.task('lint', function() {
     return gulp.src(config.paths.js)
         .pipe(lint({config: 'eslint.config.json'}))
@@ -82,4 +90,4 @@ gulp.task('watch', function() {
 });
 
 // default task for convenience
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'fonts', 'lint', 'open', 'watch']);

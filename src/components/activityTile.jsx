@@ -13,6 +13,9 @@ var styles = StyleSheet.create({
     fontWeight: "400",
     marginBottom: "0.25em"
   },
+  spinner: {
+    fontSize: "2.4em",
+  },
   quantline: {
     fontSize: "1.18em",
     fontWeight: "100"
@@ -34,26 +37,32 @@ var styles = StyleSheet.create({
 
 var ActivityTile = React.createClass({
 
-  getInitialState: function() {
-    return {
-      number: Math.floor(Math.random() * 148)
-    };
-  },
   getDefaultProps: function() {
     return {
       href: "/",
       imgSrc: "http://www.fillmurray.com/g/200/200",
       name: "Some Place",
-      quantityType: "things"
+      quantityType: "things",
+      quantity: 0
     };
   },
+
+  statics: {
+    updateQuantity: function(start, end) {
+      this.state.quantity = Math.floor(Math.random() * 100);
+    }
+  },
+  
   render: function() {
     return (
       <div className="col-lg-3 col-sm-4 col-xs-6">
         <a href={this.props.href} style={styles.card} className="thumbnail">
           <div style={styles.caption} className="caption">
             <h3 style={styles.headline}>{this.props.name}</h3>
-            <p style={styles.quantline}>{this.state.number} {this.props.quantityType}</p>            
+            { this.props.fetching ?
+                <i style={styles.spinner} className="fa fa-cog fa-spin"></i> :
+                <p style={styles.quantline}>{this.props.quantity} {this.props.quantityType}</p>              
+            }
           </div>
           <div style={styles.imgBox}>
             <img style={styles.icon} src={this.props.imgSrc}></img>
