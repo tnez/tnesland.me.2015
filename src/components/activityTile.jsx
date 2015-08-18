@@ -20,6 +20,11 @@ var styles = StyleSheet.create({
     fontSize: "1.18em",
     fontWeight: "100"
   },
+  noDataMessage: {
+    fontSize: "1.18em",
+    fontWeight: "100",
+    color: "red"
+  },
   imgBox: {
     height: "100px",
     width: "100px",
@@ -55,13 +60,15 @@ var ActivityTile = React.createClass({
   
   render: function() {
     return (
-      <div className="col-lg-3 col-sm-4 col-xs-6">
+      <div className="col-sm-4 col-xs-6">
         <a href={this.props.href} style={styles.card} className="thumbnail">
           <div style={styles.caption} className="caption">
             <h3 style={styles.headline}>{this.props.name}</h3>
             { this.props.fetching ?
-                <i style={styles.spinner} className="fa fa-cog fa-spin"></i> :
-                <p style={styles.quantline}>{this.props.quantity} {this.props.quantityType}</p>              
+             <i style={styles.spinner} className="fa fa-cog fa-spin"></i> :
+             this.props.quantity ?
+             <p style={styles.quantline}>{this.props.quantity} {this.props.quantityType}</p> :
+             <p style={styles.noDataMessage}>No data found for this time range.</p>
             }
           </div>
           <div style={styles.imgBox}>

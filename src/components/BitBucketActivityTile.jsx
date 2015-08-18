@@ -4,7 +4,7 @@ var React = require('react');
 var ActivityTile = require('./activityTile.jsx');
 var axios = require('axios');
 
-var GitHubActivityTile = React.createClass({
+var BitBucketActivityTile = React.createClass({
 
   getInitialState: function() {
     return {
@@ -15,9 +15,9 @@ var GitHubActivityTile = React.createClass({
   
   getDefaultProps: function() {
     return {
-      href: "https://github.com/tnez",
-      imgSrc: "https://assets-cdn.github.com/images/modules/logos_page/Octocat.png",
-      name: "GitHub",
+      href: "https://bitbucket.org/tnez",
+      imgSrc: "https://pbs.twimg.com/profile_images/550357080071094273/eP6Or4qB.png",
+      name: "BitBucket",
       quantityType: "commits",
       range: [0, Date.now()]
     }
@@ -34,6 +34,7 @@ var GitHubActivityTile = React.createClass({
   },
 
   updateQuantity: function(range) {
+    console.log("updating " + this.props.name);
     this.setState({fetching: true});
     var endpoint = 'https://api.github.com/users/tnez/events';
     var thisTile = this;
@@ -58,4 +59,4 @@ var GitHubActivityTile = React.createClass({
 
 });
 
-module.exports = GitHubActivityTile;
+module.exports = BitBucketActivityTile;

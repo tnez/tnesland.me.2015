@@ -1,0 +1,32 @@
+{
+    "contestSubmissions": [
+        {
+            "name": "Longest Lines",
+            "date": "Aug 08, 2015",
+            "status": "Solved",
+            "rankingPoints": 57.193,
+            "codeUniqueness": 100
+        },
+        {
+            "name": "String Permutations",
+            "date": "Aug 08, 2015",
+            "status": "Solved",
+            "rankingPoints": 88.024,
+            "codeUniqueness": 100
+        },
+        {
+            "name": "Odd Numbers",
+            "date": "Aug 08, 2015",
+            "status": "Solved",
+            "rankingPoints": 30.848,
+            "codeUniqueness": 100
+        },
+        {
+            "name": "Fizz Buzz",
+            "date": "Aug 07, 2015",
+            "status": "Solved",
+            "rankingPoints": 31.493,
+            "codeUniqueness": 100
+        }
+    ]
+}

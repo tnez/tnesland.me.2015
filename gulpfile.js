@@ -15,6 +15,7 @@ var config = {
     paths: {
         html: './src/*.html',
         js: './src/**/*.jsx',
+        data: './data/**/*.json',
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/boostrap-theme.min.css',
@@ -60,6 +61,12 @@ gulp.task('js', function() {
         .on('error', console.error.bind(console))
         .pipe(source('bundle.js'))
         .pipe(gulp.dest(config.paths.dist + '/scripts'))
+        .pipe(connect.reload());
+});
+
+gulp.task('data', function() {
+    gulp.src(config.paths.data)
+        .pipe(gulp.dest(config.paths.dist + '/data'))
         .pipe(connect.reload());
 });
 

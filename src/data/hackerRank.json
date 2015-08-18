@@ -1,0 +1,123 @@
+{
+    "contestSubmissions": [
+        {
+            "name": "Insertion Sort - Part 1",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Intro to Tutorial Challenges",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Library Fine",
+            "date": "Aug 02, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Ceasar Cipher",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Extra long factorials",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 20.0
+        },
+        {
+            "name": "Time Conversion",
+            "date": "Aug 02, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Staircase",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Plus Minus",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "Diagonal Difference",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 10.0
+        },
+        {
+            "name": "A Very Big Sum",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 5.0
+        },
+        {
+            "name": "Solve me second",
+            "date": "Aug 03, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 1.0
+        },
+        {
+            "name": "Game of Thrones - I",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 30.0
+        },
+        {
+            "name": "Alternating Characters",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 30.0
+        },
+        {
+            "name": "Pangrams",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 20.0
+        },
+        {
+            "name": "Funny String",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 30.0
+        },
+        {
+            "name": "Angry Professor",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 20.0
+        },
+        {
+            "name": "Solve me first",
+            "date": "July 21, 2015",
+            "language": "Python 3",
+            "result": "Accepted",
+            "score": 2.0
+        }
+    ]
+}

@@ -4,7 +4,11 @@ var _ = require('lodash');
 var React = require('react');
 var StyleSheet = require('react-style');
 var ActivityTile = require('./activityTile.jsx');
-var GitHubActivityTile = require('./GitHubActivityTile.jsx')
+var GitHubActivityTile = require('./GitHubActivityTile.jsx');
+var BitBucketActivityTile = require('./BitBucketActivityTile.jsx');
+var CodeEvalActivityTile = require('./CodeEvalActivityTile.jsx');
+var HackerRankActivityTile = require('./HackerRankActivityTile.jsx');
+var KaggleActivityTile = require('./KaggleActivityTile.jsx');
 
 var styles = StyleSheet.create({
   tileList: {
@@ -29,12 +33,12 @@ var ActivityTileList = React.createClass({
 
   getInitialState: function() {
     return {
-      range: [0, Date.now()]
+      range: [new Date(2007,0,1), new Date()]
     };
   },
   
   updateRange: function() {
-    this.setState({range: [0, Math.random()]});
+    this.setState({range: [Date(2000,1,1), Date()]});
   },
 
   render: function() {
@@ -55,12 +59,11 @@ var ActivityTileList = React.createClass({
           </div>
         </div>
         <div className="row">
-          <GitHubActivityTile range={[this.state.range]} />
-          <ActivityTile name="BitBucket" quantityType="commits" href="https://bitbucket.org/tnez/" imgSrc="https://pbs.twimg.com/profile_images/550357080071094273/eP6Or4qB.png" />
-          <ActivityTile name="CodeEval" quantityType="contest submissions" href="https://www.codeeval.com/profile/tnez/" imgSrc="https://tctechcrunch2011.files.wordpress.com/2012/08/codeeval-logo.jpg?w=150&h=146&crop=1" />
-          <ActivityTile name="HackerRank" quantityType="contest submissions" href="https://www.hackerrank.com/tnesland" imgSrc="https://d3keuzeb2crhkn.cloudfront.net//hackerrank//assets/brand/h_mark_sm-7875f3a7783e6e603853a87dbd001cf0.png"/>
-          <ActivityTile name="Kaggle" quantityType="contest submissions" href="https://www.kaggle.com/tnesland" imgSrc="https://www.kaggle.com/content/v/d6801c936e94/kaggle/img/site-logo.png"/>
-          <ActivityTile name="Blogger" quantityType="blog posts" href="https://blog.tnesland.me" imgSrc="https://www.blogger.com/img/blogger-logo-small.png" />
+          <GitHubActivityTile range={this.state.range} />
+          <BitBucketActivityTile range={this.state.range} />
+          <CodeEvalActivityTile range={this.state.range} />
+          <HackerRankActivityTile range={this.state.range} />
+          <KaggleActivityTile range={this.state.range} />
         </div>
       </div>
     );
