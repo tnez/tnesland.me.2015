@@ -4,21 +4,6 @@ var React = require('react');
 var ActivityTile = require('./activityTile.jsx');
 var axios = require('axios');
 
-/* export default class GitHubActivityTile extends ActivityTile {
-
-   constructor(props) {
-   super(props);
-   this.state.quantity = 0;
-   }
-
-   updateQuantity(start, end) {
-   return Math.floor(Math.random() * 100)
-   }
-   }
-
-   GitHubActivityTile.defaultProps = {
-   } */
-
 var GitHubActivityTile = React.createClass({
 
   getInitialState: function() {
