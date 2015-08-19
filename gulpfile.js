@@ -16,13 +16,20 @@ var config = {
         html: './src/*.html',
         js: './src/**/*.jsx',
         data: './data/**/*.json',
+        img: [
+            'node_modules/react-widgets/dist/img/*.gif'
+        ],
         css: [
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/boostrap-theme.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
+            'node_modules/react-widgets/dist/css/*.css',
             './src/style/*.css'
         ],
-        fonts: 'node_modules/font-awesome/fonts/fontawesome-webfont.*',
+        fonts: [
+            'node_modules/font-awesome/fonts/fontawesome-webfont.*',
+            'node_modules/react-widgets/dist/fonts/rw-widgets.*'
+        ],
         dist: './dist',
         mainJs: './src/main.jsx'
     }
@@ -83,6 +90,12 @@ gulp.task('fonts', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('img', function() {
+    gulp.src(config.paths.img)
+        .pipe(gulp.dest(config.paths.dist + '/img'))
+        .pipe(connect.reload());
+});
+
 gulp.task('lint', function() {
     return gulp.src(config.paths.js)
         .pipe(lint({config: 'eslint.config.json'}))
@@ -97,4 +110,4 @@ gulp.task('watch', function() {
 });
 
 // default task for convenience
-gulp.task('default', ['html', 'js', 'css', 'fonts', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'data', 'css', 'fonts', 'img', 'lint', 'open', 'watch']);
