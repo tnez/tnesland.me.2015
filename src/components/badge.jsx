@@ -4,12 +4,12 @@ var React = require('react');
 var StyleSheet = require('react-style');
 
 var styles = StyleSheet.create({
-    avatar: {
+  avatar: {
         borderRadius: "50%",
-        border: "12px solid #05415B",
-        padding: "3px",
-        opacity: "0.85",
-        cursor: "pointer"
+        border: "1em solid #3D6399",
+        padding: "0.5em",
+        opacity: "0.8",
+    cursor: "pointer"
     }
 });
 
@@ -19,7 +19,7 @@ var Badge = React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div style={styles.avatarContainer}>
               <img style={styles.avatar} src="https://yt3.ggpht.com/-G6JYvWHd7h8/AAAAAAAAAAI/AAAAAAAAAAA/oGiJe-uxM8I/s100-c-k-no/photo.jpg" onClick={this.clickHandler}></img>
             </div>
         );

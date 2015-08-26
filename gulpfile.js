@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
+var shell = require('gulp-shell');
 var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
@@ -15,7 +16,8 @@ var config = {
     paths: {
         html: './src/*.html',
         js: './src/**/*.jsx',
-        data: './data/**/*.json',
+        dataDir: './src/data',
+        data: './src/data/**/*.json',
         img: [
             'node_modules/react-widgets/dist/img/*.gif'
         ],
@@ -30,6 +32,7 @@ var config = {
             'node_modules/font-awesome/fonts/fontawesome-webfont.*',
             'node_modules/react-widgets/dist/fonts/rw-widgets.*'
         ],
+        scriptDir: './src/scripts',
         dist: './dist',
         mainJs: './src/main.jsx'
     }
@@ -109,5 +112,10 @@ gulp.task('watch', function() {
     gulp.watch('./src/style/*.css', ['css']);
 });
 
-// default task for convenience
-gulp.task('default', ['html', 'js', 'data', 'css', 'fonts', 'img', 'lint', 'open', 'watch']);
+gulp.task('fetchData', shell.task([
+    '/Users/tnesland/VirtualEnvs/stdpy/bin/python' + ' ' + config.paths.scriptDir + '/get_github_commits.py' + ' ' + config.paths.dataDir + '/github.json'
+]));
+
+// commonly used gulp tasks
+gulp.task('dev', ['html', 'js', 'data', 'css', 'fonts', 'img', 'lint', 'open', 'watch']);
+gulp.task('build', ['lint', 'fetchData', 'data', 'html', 'js', 'css', 'fonts', 'img']);

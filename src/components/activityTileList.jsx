@@ -11,35 +11,20 @@ var CodeEvalActivityTile = require('./CodeEvalActivityTile.jsx');
 var HackerRankActivityTile = require('./HackerRankActivityTile.jsx');
 var KaggleActivityTile = require('./KaggleActivityTile.jsx');
 
-var styles = StyleSheet.create({
-  tileList: {
-    marginTop: "60px"
-  },
-  headerBox: {
-    marginTop: "30px",
-    marginBottom: "30px",
-    height: "2.6em",
-    width: "100%"
+var style = {
+  mainDiv: {
+    fontSize: "1.4em",
+    fontWeight: "200",
+    color: "#2B5E74"
   },
   header: {
-    float: "left",
-    fontSize: "2.1em",
-    color:"#355D73",
-    marginTop: "0"
+    paddingLeft: 0
   },
-  spacer: {
-    float: "left",
-    fontSize: "1.6em",
-    fontWeight: "300",
-    marginTop: "0",
-    marginLeft: "1.2em",
-    marginRight: "1.2em"
-  },
-  selectInterval: {
-    float: "left",
-    width: "12em",
+  selectorBox: {
+    fontSize: "0.8em",
+    height: "2.4em"
   }
-});
+}
 
 var ActivityTileList = React.createClass({
 
@@ -66,6 +51,12 @@ var ActivityTileList = React.createClass({
     }
   },
 
+  getDefaultProps: function() {
+    return {
+      className: ""
+    }
+  },
+
   getInitialState: function() {
     return {
       range: [this.intervals.alltime.start, this.intervals.alltime.end]
@@ -85,23 +76,18 @@ var ActivityTileList = React.createClass({
     var intervalLabels = _.pluck(this.intervals, 'label');
 
     return (
-      <div style={styles.tileList}>
-        <div style={styles.headerBox} className="row">
-          <div className="col-xs-12">
-            <h3 style={styles.header}>My Recent Activity</h3>
-            <span style={styles.spacer}>|</span>
-            <DropdownList style={styles.selectInterval}
-                          defaultValue={intervalLabels[0]}
-                          data={intervalLabels}
-                          onChange={this.updateInterval} />
-          </div>
-        </div>
-        <div className="row">
+      <div className={this.props.className} style={style.mainDiv}>
+        <p style={style.header} className="col-xs-12 col-sm-6"><strong>My Activity</strong>:</p>
+        <DropdownList className="col-xs-12 col-sm-6"
+                      style={style.selectorBox}
+                      defaultValue={intervalLabels[0]}
+                      data={intervalLabels}
+                      onChange={this.updateInterval} />
+        <div style={style.cardBox} className="row">
           <GitHubActivityTile range={this.state.range} />
-          <BitBucketActivityTile range={this.state.range} />
-          <CodeEvalActivityTile range={this.state.range} />
           <HackerRankActivityTile range={this.state.range} />
           <KaggleActivityTile range={this.state.range} />
+          <CodeEvalActivityTile range={this.state.range} />
         </div>
       </div>
     );

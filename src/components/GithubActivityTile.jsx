@@ -1,8 +1,9 @@
 "use strict";
 
+var _ = require('lodash');
 var React = require('react');
 var ActivityTile = require('./activityTile.jsx');
-var axios = require('axios');
+var GithubData = require('../data/github.json');
 
 var GitHubActivityTile = React.createClass({
 
@@ -18,34 +19,31 @@ var GitHubActivityTile = React.createClass({
       href: "https://github.com/tnez",
       imgSrc: "https://assets-cdn.github.com/images/modules/logos_page/Octocat.png",
       name: "GitHub",
-      quantityType: "commits",
-      range: [0, Date.now()]
+      quantityType: "commits"
     }
   },
 
   componentDidMount: function() {
-    this.updateQuantity(this.state.range);
+    this.updateQuantity(this.props.range);
   },
 
   componentWillReceiveProps: function(newProps) {
     if(newProps.range) {
-      this.updateQuantity();
+      this.updateQuantity(newProps.range);
     }
   },
 
   updateQuantity: function(range) {
     this.setState({fetching: true});
-    var endpoint = 'https://api.github.com/users/tnez/events';
     var thisTile = this;
-    axios.get(endpoint)
-      .then(function(response) {
-        setTimeout(function() {
-          thisTile.setState({quantity: thisTile.state.quantity + 1, fetching: false});
-        }, 800);
-      })
-      .catch(function(response) {
-        thisTile.setState({fetching: false});
-      });
+    var filteredData = _.filter(GithubData.commits, function(commit) {
+      var commitDate = new Date(commit.date);
+      return commitDate >= range[0] && commitDate <= range[1];
+    });
+    this.setState({quantity: filteredData.length});
+    setTimeout(function() {
+      thisTile.setState({fetching: false});
+    }, 800);
   },
 
   render: function() {

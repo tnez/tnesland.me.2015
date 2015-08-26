@@ -1,66 +1,34 @@
 "use strict";
 
 var React = require('react');
-var StyleSheet = require('react-style');
 
-var styles = StyleSheet.create({
-  blurbBox: {
-    marginTop: "0px",
-    marginBottom: "0px",
-    height: "6em",
-    opacity: "0.65",
-  },
-  blurb: {
-    color: "red",
+var style = {
+  mainDiv: {
+    fontSize: "1.4em",
     fontWeight: "200",
-    fontSize: "2.6em"
+    color: "#2B5E74"
   }
-});
+};
 
 var Blurb = React.createClass({
 
-  getInitialState: function() {
-    return {
-      blurb: ""
-    };
-  },
-
   getDefaultProps: function() {
     return {
-      lines: [
-        "I am a...",
-        "I am a... developer...",
-        "I am a... developer... who enjoys doing a bit of everything.",
-        "",
-        "I love developing...",
-        "I love developing... efficient web services",
-        "I love developing... beautiful user interfaces",
-        "I love developing... snazzy mobile applications",
-        "I am a developer who enjoys doing a bit of everything!"
-      ]
-    };
-  },
-
-  componentDidMount: function() {
-    this.nextLine(0);
-  },
-
-  nextLine: function(idx) {
-    if (idx < this.props.lines.length) {
-      var next = this.nextLine;
-      this.setState({blurb: this.props.lines[idx]});
-      setTimeout(function() {
-        next(idx + 1);
-      }, 2000);
+      className: ""
     }
   },
 
   render: function() {
     return (
-      <div className="row" style={styles.blurbBox}>
-        <div className="col-xs-12">
-          <p style={styles.blurb} className="">{this.state.blurb}</p>
-        </div>
+      <div className={this.props.className} style={style.mainDiv}>
+        <p><strong>Hello!</strong> My name is <strong>Travis</strong> and I <strong>love making things</strong>:</p>
+        <ul className="fa-ul">
+          <li><i className="fa-li fa fa-terminal"></i>I love digging into and visualizing data using tools like <a href="https://www.python.org/">Python</a>, <a href="https://www.r-project.org/">R</a>, and <a href="http://d3js.org/">D3.js</a></li>
+          <li><i className="fa-li fa fa-terminal"></i>I enjoy writing web services with tools like <a href="http://rubyonrails.org/">Rails</a>, <a href="https://www.python.org">Python</a>, and <a href="https://expressjs.com">Express</a></li>
+          <li><i className="fa-li fa fa-terminal"></i>I'm currently drinking the <a href="https://facebook.github.io/react/">React</a> cool-aid... I love it!</li>
+          <li><i className="fa-li fa fa-terminal"></i>I've used my skills to contribute to some <a href="https://scholar.google.com/citations?user=R2m4jbUAAAAJ">cool reasearch</a></li>
+          <li><i className="fa-li fa fa-terminal"></i>I've built some <a href="/projects/dots">fun things</a></li>
+        </ul>
       </div>
     )
   }

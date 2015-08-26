@@ -1,12 +1,21 @@
-.nav-pills>li.active>a,
-.nav-pills>li.active>a:focus,
-.nav-pills>li.active>a:hover {
-  background-color: red
+body {
+  color: #30353C;
+  font-size: 1.4em;
+  font-weight: 200;
 }
-a {
-  color: #05415B;
-  opacity: 0.85
+a, a:focus, a:hover {
+  color: #CC2814;
 }
-a:focus, a:hover {
-  color: #05415B
+a.active {
+  text-decoration: underline;
+}
+strong {
+  color: #3D6399;
+}
+.nav-pills>li.active>a {
+  color: #FFF;
+  opacity: 0.85;
+}
+.nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  color: red;
 }
