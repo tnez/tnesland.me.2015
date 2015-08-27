@@ -8,6 +8,7 @@ var Header = require('./components/header.jsx');
 var Badge = require('./components/badge.jsx');
 var Blurb = require('./components/Blurb.jsx');
 var ActivityTileList = require('./components/activityTileList.jsx');
+var Contact = require('./components/contact.jsx');
 
 var style = {
   wrapper: {
@@ -51,7 +52,7 @@ var App = React.createClass({
       "home": <ActivityTileList />,
       "projects": <p>List of projects coming soon!</p>,
       "resume": <p>Resume coming soon!</p>,
-      "contact": <p>Contact coming soon!</p>
+      "contact": <Contact />
     };
     console.log("switch page:", newRoute);
     if (this.state.route !== newRoute) {
