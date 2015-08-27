@@ -1,6 +1,9 @@
 $ = jQuery = require('jquery');
 
-var React = require('react');
+var _ = require('lodash');
+var React = require('react/addons');
+var Anim = React.addons.CSSTransitionGroup;
+console.log(Anim);
 var Header = require('./components/header.jsx');
 var Badge = require('./components/badge.jsx');
 var Blurb = require('./components/Blurb.jsx');
@@ -29,19 +32,31 @@ var App = React.createClass({
       badgeClassName: "col-lg-12 badge-enter",
       mainContent: <ActivityTileList />,
       mainContentClassName: "main-content col-lg-6",
-      page: "home",
+      route: "home",
       wrapperClassName: "wrapper-enter"
     }
   },
 
   componentDidMount: function() {
-    console.log("componentDidMount: " + this.state.mainContentClassName );
     setTimeout(function() {
       this.setState({wrapperClassName: this.state.wrapperClassName + " wrapper-enter-active"});
     }.bind(this), 200);
     setTimeout(function() {
       this.setState({badgeClassName: this.state.badgeClassName + " badge-enter-active"});
     }.bind(this), 1000);
+  },
+
+  switchPage: function(newRoute) {
+    var mainContentForRoute = {
+      "home": <ActivityTileList />,
+      "projects": <p>List of projects coming soon!</p>,
+      "resume": <p>Resume coming soon!</p>,
+      "contact": <p>Contact coming soon!</p>
+    };
+    console.log("switch page:", newRoute);
+    if (this.state.route !== newRoute) {
+      this.setState({route: newRoute, mainContent: mainContentForRoute[newRoute]});
+    }
   },
 
   render: function() {
@@ -52,12 +67,14 @@ var App = React.createClass({
         </div>
         <div style={style.contentBox} className="row">
           <div style={style.leftBox} className="col-lg-6">
-            <Header />
+            <Header routingCallback={this.switchPage} />
             <Blurb />
           </div>
-          <div style={style.rightBox} className={this.state.mainContentClassName} >
-            {this.state.mainContent}
-          </div>
+          <Anim transitionName="mainContent">
+            <div key={this.state.route} className="mainContent col-lg-6">
+              {this.state.mainContent}
+            </div>
+          </Anim>
         </div>
       </div>
     );

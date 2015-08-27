@@ -14,12 +14,29 @@
 .badge-enter.badge-enter-active {
   margin-left: 0;
   opacity: 0.8;
-  transition: margin-left .5s ease-in, opacity .5s ease-in;
+  transition: margin-left .5s ease-in, opacity .5s ease-out;
 }
-/* .content-enter { */
-/*   opacity: 0.01; */
-/* } */
-/* .content-enter.content-enter-active { */
-/*   opacity: 1; */
-/*   transition: opacity 1s ease-in; */
-/* } */
+.mainContent {
+    margin-bottom: 3em;
+    height: auto;
+}
+.mainContent-enter {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    transform: translate3d(100%, 0, 0);
+}
+.mainContent-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all .5s;
+}
+.mainContent-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+.mainContent-leave-active {
+    opacity: 0;
+    transform: translate3d(0, 600px, 0);
+    transition: all .5s;
+}

@@ -36,22 +36,51 @@ var styles = StyleSheet.create({
 });
 
 var Header = React.createClass({
-    render: function() {
-        return (
-          <div style={styles.headerBox}>
-            <div style={styles.titleBox}>
-              <h1 style={styles.title}>Travis Nesland</h1>
-              <h2 styles={styles.tagline}>Software Developer + Data Wrangler</h2>
-            </div>
-            <ul style={styles.navBox}>
-              <li style={styles.navLinkItem}><a style={styles.navLink} className="active" href="/">home</a></li>
-              <li style={styles.navLinkItem}><a style={styles.navLink} href="/">projects</a></li>
-              <li style={styles.navLinkItem}><a style={styles.navLink} href="/">resume</a></li>
-              <li style={styles.navLinkItem}><a style={styles.navLink} href="/">contact</a></li>
-            </ul>
-          </div>
-        );
-    }
+
+  getDefaultProps: function() {
+    return {
+      routingCallback: function(newRoute) {
+        console.log("I want to go to", newRoute);
+      }
+    };
+  },
+
+  componentDidMount: function() {
+    $(React.findDOMNode(this.refs.home)).addClass("active");
+  },
+
+  handleLinkClick: function(event) {
+    event.preventDefault();
+    let route = $(event.target).data("route");
+    this.props.routingCallback(route);
+    $("#main-nav>li>a").removeClass("active");
+    $(event.target).addClass("active");
+  },
+
+  render: function() {
+    return (
+      <div style={styles.headerBox}>
+        <div style={styles.titleBox}>
+          <h1 style={styles.title}>Travis Nesland</h1>
+          <h2 styles={styles.tagline}>Software Developer + Data Wrangler</h2>
+        </div>
+        <ul id="main-nav" style={styles.navBox}>
+          <li style={styles.navLinkItem}>
+            <a style={styles.navLink} ref="home" data-route="home" href="/" onClick={this.handleLinkClick}>home</a>
+          </li>
+          <li style={styles.navLinkItem}>
+            <a style={styles.navLink} ref="projects" data-route="projects" href="/projects" onClick={this.handleLinkClick}>projects</a>
+          </li>
+          <li style={styles.navLinkItem}>
+            <a style={styles.navLink} ref="resume" data-route="resume" href="/resume" onClick={this.handleLinkClick}>resume</a>
+          </li>
+          <li style={styles.navLinkItem}>
+            <a style={styles.navLink} ref="contact" data-route="contact" href="/contact" onClick={this.handleLinkClick}>contact</a>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 });
 
 
