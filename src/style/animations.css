@@ -1,0 +1,25 @@
+.wrapper-enter {
+  margin-top: -6em;
+  opacity: 0;  
+}
+.wrapper-enter.wrapper-enter-active {
+  margin-top: 3em;
+  opacity: 1;  
+  transition: margin-top .5s ease-out, opacity .5s ease-out;
+}
+.badge-enter {
+  margin-left: -75%;
+  opacity: 0;
+}
+.badge-enter.badge-enter-active {
+  margin-left: 0;
+  opacity: 0.8;
+  transition: margin-left .5s ease-in, opacity .5s ease-in;
+}
+/* .content-enter { */
+/*   opacity: 0.01; */
+/* } */
+/* .content-enter.content-enter-active { */
+/*   opacity: 1; */
+/*   transition: opacity 1s ease-in; */
+/* } */

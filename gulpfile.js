@@ -117,5 +117,5 @@ gulp.task('fetchData', shell.task([
 ]));
 
 // commonly used gulp tasks
-gulp.task('dev', ['html', 'js', 'data', 'css', 'fonts', 'img', 'lint', 'open', 'watch']);
+gulp.task('dev', ['html', 'css', 'fonts', 'img', 'data', 'js', 'lint', 'open', 'watch']);
 gulp.task('build', ['lint', 'fetchData', 'data', 'html', 'js', 'css', 'fonts', 'img']);

@@ -30,6 +30,7 @@
     "react-slider": "^0.5.1",
     "react-style": "^0.5.5",
     "react-widgets": "^2.8.0",
+    "react.animate": "^1.0.0",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
   }
