@@ -19,6 +19,11 @@ var config = {
         dataDir: './src/data',
         data: './src/data/**/*.json',
         img: [
+            './src/img/**/*.jpg',
+            './src/img/**/*.jpeg',
+            './src/img/**/*.png',
+            './src/img/**/*.bmp',
+            './src/img/**/*.gif',
             'node_modules/react-widgets/dist/img/*.gif'
         ],
         css: [

@@ -1,31 +1,34 @@
 "use strict";
 
 var React = require('react');
-var StyleSheet = require('react-style');
-
-var styles = StyleSheet.create({
-  avatar: {
-    borderRadius: "50%",
-    border: "1em solid #3D6399",
-    padding: "0.5em",
-    cursor: "pointer",
-    minHeight: "142px"
-  }
-});
 
 var Badge = React.createClass({
-
   getDefaultProps: function() {
     return {
+      borderColor: "#3D6399",
       className: "",
-      clickHandler: console.log("Someone clicked me face!")
+      clickHandler: console.log("Someone clicked me face!"),
+      height: "12em",
+      imgSrc: "",
+      padding: "0.5em",
+      width: "12em"
     };
   },
-
   render: function() {
+    let style = {
+      avatar: {
+        border: "1em solid " + this.props.borderColor,
+        borderRadius: "50%",
+        cursor: "pointer",
+        height: this.props.height,
+        imgSrc: this.props.imgSrc,
+        padding: this.props.padding,
+        width: this.props.width
+      }
+    };
     return (
-      <div className={this.props.className} style={styles.avatarContainer}>
-        <img style={styles.avatar} src="https://yt3.ggpht.com/-G6JYvWHd7h8/AAAAAAAAAAI/AAAAAAAAAAA/oGiJe-uxM8I/s100-c-k-no/photo.jpg" onClick={this.props.clickHandler}></img>
+      <div className={this.props.className}>
+        <img style={style.avatar} src={this.props.imgSrc} onClick={this.props.clickHandler}></img>
       </div>
     );
   }
