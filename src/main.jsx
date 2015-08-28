@@ -9,6 +9,7 @@ var Badge = require('./components/badge.jsx');
 var Blurb = require('./components/Blurb.jsx');
 var ActivityTileList = require('./components/activityTileList.jsx');
 var Contact = require('./components/contact.jsx');
+var Projects = require('./components/projects.jsx');
 
 var style = {
   wrapper: {
@@ -50,7 +51,7 @@ var App = React.createClass({
   switchPage: function(newRoute) {
     var mainContentForRoute = {
       "home": <ActivityTileList />,
-      "projects": <p>List of projects coming soon!</p>,
+      "projects": <Projects />,
       "resume": <p>Resume coming soon!</p>,
       "contact": <Contact />
     };
