@@ -129,4 +129,4 @@ gulp.task('fetchData', shell.task([
 
 // commonly used gulp tasks
 gulp.task('dev', ['html', 'css', 'fonts', 'img', 'data', 'projects', 'js', 'lint', 'open', 'watch']);
-gulp.task('build', ['lint', 'fetchData', 'data', 'projects', 'html', 'js', 'css', 'fonts', 'img']);
+gulp.task('build', ['lint', 'data', 'projects', 'html', 'js', 'css', 'fonts', 'img']);
