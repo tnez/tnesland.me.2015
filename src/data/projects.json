@@ -9,7 +9,7 @@
         },
         {
             "title": "muscip",
-            "screenshot": "./img/sfn.poster.png",
+            "screenshot": "./img/sfn.poster.blur.png",
             "demoLink": "http://google.com",
             "repoLink": "https://github.com/tnez/muscip",
             "blurb": "A neuroimaging toolbox implemented in Python used to generate connectomes from diffusion magnetic resonance images of the human brain."
