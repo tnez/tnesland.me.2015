@@ -58,9 +58,25 @@ var ProjectTile = React.createClass({
         paddingTop: "0.8em",
         width: "100%",
       },
+      header: {
+        height: "2em",
+        display: "inline"
+      },
       title: {
-        marginTop: 0,
-        paddingTop: 0
+        display: "inline-block",
+        marginRight: "0.25em"
+      },
+      projLink: {
+        paddingBottom: "0.35em",
+        color: "white",
+        fontSize: "0.8em",
+        fontWeight: 300,
+        textDecoration: "underline"
+      },
+      projLinkSpacer: {
+        fontSize: "0.5em",
+        marginLeft: "0.25em",
+        marginRight: "0.25em"
       },
       blurb: {
         //
@@ -94,10 +110,28 @@ var ProjectTile = React.createClass({
           );
       }
     }
+    var projectLinks = [];
+    if (this.props.demoLink && this.props.demoLink !== "") {
+      projectLinks.push(
+        <a key="demoLink" style={style.projLink} href={this.props.demoLink} target="_blank">live demo</a>
+      );
+    }
+    if (this.props.demoLink && this.props.demoLink !== "" &&
+      this.props.repoLink && this.props.repoLink !== "") {
+        projectLinks.push(<span key="spacer" style={style.projLinkSpacer}>|</span>)
+    }
+    if (this.props.repoLink && this.props.repoLink !== "") {
+      projectLinks.push(
+        <a key="repoLink" style={style.projLink} href={this.props.repoLink} target="_blank">source code</a>
+      );
+    }
     return(
       <div style={style.mainDiv}>
         <div style={style.textVisor}>
-          <h3 style={style.title}>{this.props.title}</h3>
+          <div style={style.header}>
+            <h3 style={style.title}>{this.props.title}</h3>
+            {projectLinks}
+          </div>
           <p style={style.blurb}>{this.props.blurb}</p>
           <div style={style.carouselNav} className="row">
             <div style={style.leftArrow} className="col-xs-1" onClick={this.moveLeft}>
