@@ -61,7 +61,7 @@ var Header = React.createClass({
     return (
       <div style={styles.headerBox}>
         <div style={styles.titleBox}>
-          <h1 style={styles.title}>Travis Nesland</h1>
+          <h1 style={styles.title} data-route="home" onClick={this.handleLinkClick}>Travis Nesland</h1>
           <h2 styles={styles.tagline}>Software Developer + Data Wrangler</h2>
         </div>
         <ul id="main-nav" style={styles.navBox}>
