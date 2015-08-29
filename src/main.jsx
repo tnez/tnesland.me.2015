@@ -65,7 +65,9 @@ var App = React.createClass({
     return (
       <div style={style.wrapper} className={this.state.wrapperClassName}>
         <div style={style.badgeBox} className="row text-center">
-          <Badge className={this.state.badgeClassName} imgSrc="./img/travis.nesland.face.jpg"/>
+          <Badge className={this.state.badgeClassName}
+                 imgSrc="./img/travis.nesland.face.jpg"
+                 clickHandler={this.switchPage.bind(null, "home")} />
         </div>
         <div style={style.contentBox} className="row">
           <div style={style.leftBox} className="col-lg-6">
