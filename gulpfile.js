@@ -18,7 +18,6 @@ var config = {
         js: './src/**/*.jsx',
         dataDir: './src/data',
         data: './src/data/**/*.json',
-        media: './src/media/**/*',
         img: [
             './src/img/**/*.jpg',
             './src/img/**/*.jpeg',
@@ -105,11 +104,6 @@ gulp.task('img', function() {
         .pipe(connect.reload());
 });
 
-gulp.task('media', function() {
-    gulp.src(config.paths.media)
-        .pipe(gulp.dest(config.paths.dist + '/media'));
-});
-
 gulp.task('lint', function() {
     return gulp.src(config.paths.js)
         .pipe(lint({config: 'eslint.config.json'}))
@@ -128,5 +122,5 @@ gulp.task('fetchData', shell.task([
 ]));
 
 // commonly used gulp tasks
-gulp.task('dev', ['html', 'css', 'fonts', 'img', 'media', 'data', 'js', 'lint', 'open', 'watch']);
-gulp.task('build', ['lint', 'fetchData', 'data', 'html', 'js', 'css', 'fonts', 'img', 'media']);
+gulp.task('dev', ['html', 'css', 'fonts', 'img', 'data', 'js', 'lint', 'open', 'watch']);
+gulp.task('build', ['lint', 'fetchData', 'data', 'html', 'js', 'css', 'fonts', 'img']);
