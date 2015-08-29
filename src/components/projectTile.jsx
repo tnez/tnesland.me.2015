@@ -34,6 +34,9 @@ var ProjectTile = React.createClass({
       mainDiv: {
         position: "relative",
         backgroundImage: "url(" + this.props.screenshot + ")",
+        backgroundSize: "150% auto",
+        backgroundPosition: "50% 50%",
+        backgroundRepeat: "no-repeat",
         borderRadius: "1em",
         boxShadow: "2px 3px 8px rgba(0,0,0,0.75)",
         color: this.props.textColor,
@@ -67,12 +70,15 @@ var ProjectTile = React.createClass({
         paddingBottom: 0
       },
       leftArrow: {
+        cursor: "pointer"
       },
       rightArrow: {
+        cursor: "pointer"
       },
       pageIndicators: {
         marginLeft: "0.2em",
-        marginRight: "0.2em"
+        marginRight: "0.2em",
+        cursor: "pointer"
       }
     };
     var pageIndicators = [];
