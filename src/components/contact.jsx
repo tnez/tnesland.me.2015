@@ -43,14 +43,14 @@ var Contact = React.createClass({
   },
 
   handleInput: function(event) {
-    let newText = event.target.value;
+    var newText = event.target.value;
     this.setState({text: newText});
   },
 
   submit: function(event) {
     event.preventDefault();
-    let body = this.state.text;
-    let subject = "Hello from your website";
+    var body = this.state.text;
+    var subject = "Hello from your website";
     window.location.href = "mailto:tnesland@gmail.com?Subject=" + subject + "&Body=" + body;
     this.setState({text: ""});
   },

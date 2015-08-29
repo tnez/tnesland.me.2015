@@ -15,7 +15,7 @@ var Badge = React.createClass({
     };
   },
   render: function() {
-    let style = {
+    var style = {
       avatar: {
         border: "1em solid " + this.props.borderColor,
         borderRadius: "50%",

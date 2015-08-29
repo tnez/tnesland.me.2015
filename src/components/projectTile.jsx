@@ -19,18 +19,18 @@ var ProjectTile = React.createClass({
     }
   },
   moveLeft: function(event) {
-    let newIdx = this.props.idx - 1 < 0 ? this.props.projectCount - 1 : this.props.idx - 1;
+    var newIdx = this.props.idx - 1 < 0 ? this.props.projectCount - 1 : this.props.idx - 1;
     this.transitionTo(newIdx);
   },
   moveRight: function(event) {
-    let newIdx = this.props.idx + 1 === this.props.projectCount ? 0 : this.props.idx + 1;
+    var newIdx = this.props.idx + 1 === this.props.projectCount ? 0 : this.props.idx + 1;
     this.transitionTo(newIdx);
   },
   transitionTo: function(newIdx) {
     this.props.slideMethod(this.props.idx, newIdx);
   },
   render: function(){
-    let style = {
+    var style = {
       mainDiv: {
         position: "relative",
         backgroundImage: "url(" + this.props.screenshot + ")",

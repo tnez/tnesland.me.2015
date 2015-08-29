@@ -51,7 +51,7 @@ var Header = React.createClass({
 
   handleLinkClick: function(event) {
     event.preventDefault();
-    let route = $(event.target).data("route");
+    var route = $(event.target).data("route");
     this.props.routingCallback(route);
     $("#main-nav>li>a").removeClass("active");
     $(event.target).addClass("active");
