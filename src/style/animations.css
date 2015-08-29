@@ -45,7 +45,7 @@
 }
 .project-tile-enter-active {
   opacity: 1;
-  transition: all 1s;
+  transition: all .5s ease-out;
 }
 .project-tile-leave {
   opacity: 1;
@@ -53,5 +53,5 @@
 }
 .project-tile-leave-active {
   opacity: 0;
-  transition: all 1s;
+  transition: all .5s ease-out;
 }
