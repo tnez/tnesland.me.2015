@@ -3,7 +3,7 @@
         {
             "title": "D.O.T.S",
             "screenshot": "./img/dots.screenshot.png",
-            "demoLink": "http://tnesland.me/projects/dots",
+            "demoLink": "/projects/dots",
             "repoLink": "https://github.com/tnez/dots",
             "blurb": "A simple game implemented in React.js, the objective of which is to stay away from the floating dots. Stay alive as long as you can!"
         },

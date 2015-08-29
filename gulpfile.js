@@ -37,6 +37,7 @@ var config = {
             'node_modules/font-awesome/fonts/fontawesome-webfont.*',
             'node_modules/react-widgets/dist/fonts/rw-widgets.*'
         ],
+        projects: './src/projects/**/*',
         scriptDir: './src/scripts',
         dist: './dist',
         mainJs: './src/main.jsx'
@@ -104,6 +105,11 @@ gulp.task('img', function() {
         .pipe(connect.reload());
 });
 
+gulp.task('projects', function() {
+    gulp.src(config.paths.projects)
+        .pipe(gulp.dest(config.paths.dist + '/projects'));
+});
+
 gulp.task('lint', function() {
     return gulp.src(config.paths.js)
         .pipe(lint({config: 'eslint.config.json'}))
@@ -122,5 +128,5 @@ gulp.task('fetchData', shell.task([
 ]));
 
 // commonly used gulp tasks
-gulp.task('dev', ['html', 'css', 'fonts', 'img', 'data', 'js', 'lint', 'open', 'watch']);
-gulp.task('build', ['lint', 'fetchData', 'data', 'html', 'js', 'css', 'fonts', 'img']);
+gulp.task('dev', ['html', 'css', 'fonts', 'img', 'data', 'projects', 'js', 'lint', 'open', 'watch']);
+gulp.task('build', ['lint', 'fetchData', 'data', 'projects', 'html', 'js', 'css', 'fonts', 'img']);
