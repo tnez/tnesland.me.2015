@@ -72,7 +72,7 @@ var Header = React.createClass({
             <a style={styles.navLink} ref="projects" data-route="projects" href="/projects" onClick={this.handleLinkClick}>projects</a>
           </li>
           <li style={styles.navLinkItem}>
-            <a style={styles.navLink} ref="resume" data-route="resume" href="/resume" onClick={this.handleLinkClick}>resume</a>
+            <a style={styles.navLink} ref="resume" href="./media/TravisNeslandResume.pdf" target="_blank">resume</a>
           </li>
           <li style={styles.navLinkItem}>
             <a style={styles.navLink} ref="contact" data-route="contact" href="/contact" onClick={this.handleLinkClick}>contact</a>
