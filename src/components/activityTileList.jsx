@@ -21,7 +21,7 @@ var style = {
     paddingLeft: 0
   },
   selectorBox: {
-    fontSize: "0.8em",
+    fontSize: "0.9em",
     height: "2.4em"
   }
 }
