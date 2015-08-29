@@ -1,8 +1,10 @@
 "use strict";
 
-var React = require('react');
+var React = require('react/addons');
+var Anim = React.addons.CSSTransitionGroup;
 //var Carousel = require('react-slick');
 var ProjectTile = require('./projectTile.jsx');
+var ProjectData = require('../data/projects.json');
 
 var style = {
   mainDiv: {
@@ -20,15 +22,27 @@ var style = {
 }
 
 var Projects = React.createClass({
+  getInitialState: function(){
+    return {
+      idx: 0
+    };
+  },
+  transitionToIndex: function(oldIdx, newIdx){
+    this.setState({idx: newIdx});
+  },
   render: function() {
     return (
       <div style={style.mainDiv}>
         <p style={style.sectionHeader}><strong>Example Projects</strong>:</p>
-        <div style={style.carousel}>
-          <ProjectTile title="D.O.T.S" screenshot="./img/dots.screenshot.png"
-                       repoLink="github.com/tnez" demoLink="tnesland.me/projects/dots"
-                       blurb="A simple game implemented in React.js, the objective of which is to stay away from the floating dots. Stay alive as long as you can!" />
-        </div>
+        <Anim transitionName="project-tile">
+          <div key={this.state.idx} style={style.carousel}>
+            <ProjectTile key={this.state.idx}
+                         idx={this.state.idx}
+                         projectCount={ProjectData.projects.length}
+                         slideMethod={this.transitionToIndex}
+                         {...ProjectData.projects[this.state.idx]} />
+          </div>
+        </Anim>
       </div>
     );
   }

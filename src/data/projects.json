@@ -1,0 +1,18 @@
+{
+    "projects": [
+        {
+            "title": "D.O.T.S",
+            "screenshot": "./img/dots.screenshot.png",
+            "demoLink": "http://tnesland.me/projects/dots",
+            "repoLink": "https://github.com/tnez/dots",
+            "blurb": "A simple game implemented in React.js, the objective of which is to stay away from the floating dots. Stay alive as long as you can!"
+        },
+        {
+            "title": "muscip",
+            "screenshot": "./img/sfn.poster.png",
+            "demoLink": "http://google.com",
+            "repoLink": "https://github.com/tnez/muscip",
+            "blurb": "A neuroimaging toolbox implemented in Python used to generate connectomes from diffusion magnetic resonance images of the human brain."
+        }
+    ]
+}

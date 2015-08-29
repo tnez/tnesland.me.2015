@@ -8,7 +8,7 @@ var ProjectTile = React.createClass({
       blurb: "",
       demoLink: "https://github.com/tnez",
       idx: 0,
-      projectCount: 2,
+      projectCount: 0,
       repoLink: "https://github.com/tnez",
       screenshot: "http://www.fillmurray.com/600/400",
       slideMethod: function(oldIdx, newIdx){
@@ -47,7 +47,7 @@ var ProjectTile = React.createClass({
         position: "absolute",
         bottom: 0,
         left: 0,
-        backgroundColor: "rgba(20,204,40,0.75)",
+        backgroundColor: "rgba(20,204,40,0.9)",
         borderBottomLeftRadius: "1em",
         borderBottomRightRadius: "1em",
         margin: 0,

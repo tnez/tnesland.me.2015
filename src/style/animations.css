@@ -40,3 +40,18 @@
     transform: translate3d(0, 600px, 0);
     transition: all .5s;
 }
+.project-tile-enter {
+  opacity: 0;
+}
+.project-tile-enter-active {
+  opacity: 1;
+  transition: all 1s;
+}
+.project-tile-leave {
+  opacity: 1;
+  height: 0 !important;
+}
+.project-tile-leave-active {
+  opacity: 0;
+  transition: all 1s;
+}
