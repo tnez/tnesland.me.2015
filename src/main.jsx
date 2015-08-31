@@ -2,6 +2,7 @@ $ = jQuery = require('jquery');
 
 var _ = require('lodash');
 var React = require('react/addons');
+var MediaQuery = require('react-responsive');
 var Anim = React.addons.CSSTransitionGroup;
 console.log(Anim);
 var Header = require('./components/header.jsx');
@@ -64,11 +65,13 @@ var App = React.createClass({
   render: function() {
     return (
       <div style={style.wrapper} className={this.state.wrapperClassName}>
-        <div style={style.badgeBox} className="row text-center">
-          <Badge className={this.state.badgeClassName}
-                 imgSrc="./img/travis.nesland.face.jpg"
-                 clickHandler={this.switchPage.bind(null, "home")} />
-        </div>
+        <MediaQuery query="(min-device-width: 768px)">
+          <div style={style.badgeBox} className="row text-center">
+            <Badge className={this.state.badgeClassName}
+                   imgSrc="./img/travis.nesland.face.jpg"
+                   clickHandler={this.switchPage.bind(null, "home")} />
+          </div>
+        </MediaQuery>
         <div style={style.contentBox} className="row">
           <div style={style.leftBox} className="col-lg-6">
             <Header routingCallback={this.switchPage} />
