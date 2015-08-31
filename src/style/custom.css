@@ -1,7 +1,26 @@
 body {
   color: #30353C;
-  font-size: 1.4em;
   font-weight: 200;
+}
+@media (max-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media (max-width: 992px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
 }
 a, a:focus, a:hover {
   color: #CC2814;
@@ -11,11 +30,4 @@ a.active {
 }
 strong {
   color: #3D6399;
-}
-.nav-pills>li.active>a {
-  color: #FFF;
-  opacity: 0.85;
-}
-.nav-pills>li>a:focus, .nav-pills>li>a:hover {
-  color: red;
 }
