@@ -65,10 +65,8 @@ var ActivityTileList = React.createClass({
 
   updateInterval: function(selected) {
     var intervalData = _.find(this.intervals, function(interval) {
-      console.log(interval.label + " <-> " + selected);
       return interval.label === selected;
     });
-    console.log("intervalData: " + intervalData);
     this.setState({range: [intervalData.start, intervalData.end]});
   },
 

@@ -7,7 +7,7 @@ var Badge = React.createClass({
     return {
       borderColor: "#3D6399",
       className: "",
-      clickHandler: console.log("Someone clicked me face!"),
+      clickHandler: null,
       height: "12em",
       imgSrc: "",
       padding: "0.5em",

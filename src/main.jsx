@@ -4,7 +4,6 @@ var _ = require('lodash');
 var React = require('react/addons');
 var MediaQuery = require('react-responsive');
 var Anim = React.addons.CSSTransitionGroup;
-console.log(Anim);
 var Header = require('./components/header.jsx');
 var Badge = require('./components/badge.jsx');
 var Blurb = require('./components/Blurb.jsx');
@@ -56,7 +55,6 @@ var App = React.createClass({
       "resume": <p>Resume coming soon!</p>,
       "contact": <Contact />
     };
-    console.log("switch page:", newRoute);
     if (this.state.route !== newRoute) {
       this.setState({route: newRoute, mainContent: mainContentForRoute[newRoute]});
     }
