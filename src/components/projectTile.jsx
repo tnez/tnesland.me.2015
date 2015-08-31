@@ -43,8 +43,8 @@ var ProjectTile = React.createClass({
         opacity: 0.75,
         height: "100%",
         width: "100%",
-        fontSize: "1.2em",
-        fontWeight: "100"
+        fontSize: "1em",
+        fontWeight: "200"
       },
       textVisor: {
         position: "absolute",
@@ -82,16 +82,22 @@ var ProjectTile = React.createClass({
         //
       },
       carouselNav: {
-        paddingTop: "0.8em",
-        paddingBottom: 0
+        margin: 0,
+        padding: 0,
+        width: "100%",
+        paddingTop: "0.8em"
       },
       leftArrow: {
+        padding: 0,
         cursor: "pointer"
       },
       rightArrow: {
+        padding: 0,
+        textAlign: "right",
         cursor: "pointer"
       },
       pageIndicators: {
+        padding: 0,
         marginLeft: "0.2em",
         marginRight: "0.2em",
         cursor: "pointer"
