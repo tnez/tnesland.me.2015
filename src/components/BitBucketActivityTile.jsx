@@ -2,7 +2,6 @@
 
 var React = require('react');
 var ActivityTile = require('./activityTile.jsx');
-var axios = require('axios');
 
 var BitBucketActivityTile = React.createClass({
 
@@ -34,18 +33,7 @@ var BitBucketActivityTile = React.createClass({
   },
 
   updateQuantity: function(range) {
-    this.setState({fetching: true});
-    var endpoint = 'https://api.github.com/users/tnez/events';
-    var thisTile = this;
-    axios.get(endpoint)
-      .then(function(response) {
-        setTimeout(function() {
-          thisTile.setState({quantity: thisTile.state.quantity + 1, fetching: false});
-        }, 800);
-      })
-      .catch(function(response) {
-        thisTile.setState({fetching: false});
-      });
+    console.warn("updateQuantity not yet implemented");
   },
 
   render: function() {
